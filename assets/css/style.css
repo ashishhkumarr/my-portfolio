@@ -1228,7 +1228,17 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
+/*-----------------------------------*\
+  #HIGHLIGHTS TEXT TOGGLE
+\*-----------------------------------*/
 
+/* Default: show preview, hide detailed */
+.testimonials .only-modal { display: none; }
+.testimonials .only-preview { display: block; }
+
+/* Inside modal: show detailed, hide preview */
+.testimonials-modal .only-modal { display: block; }
+.testimonials-modal .only-preview { display: none; }
 
 /*-----------------------------------*\
   #RESPONSIVE
@@ -1884,4 +1894,29 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+/*-----------------------------------*\
+  #HIGHLIGHTS (override testimonial clamp)
+\*-----------------------------------*/
+
+.testimonials .testimonials-text {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/*-----------------------------------*\
+  #HIGHLIGHTS MODAL PARAGRAPH SPACING
+\*-----------------------------------*/
+
+/* Add space between paragraphs in the popup */
+.testimonials-modal [data-modal-text] p {
+  margin: 0 0 16px;   /* bottom gap */
+  line-height: 1.6;   /* optional: nicer readability */
+}
+
+/* No extra space after the last paragraph */
+.testimonials-modal [data-modal-text] p:last-child {
+  margin-bottom: 0;
 }
